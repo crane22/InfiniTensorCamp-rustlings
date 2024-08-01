@@ -1,11 +1,14 @@
 #![allow(dead_code)]
+// https://doc.rust-lang.org/book/ch10-02-traits.html#default-implementations
 
 trait Licensed {
     // TODO: Add a default implementation for `licensing_info` so that
     // implementors like the two structs below can share that default behavior
     // without repeating the function.
     // The default license information should be the string "Default license".
-    fn licensing_info(&self) -> String;
+    fn licensing_info(&self) -> String {
+        "Default license".to_string()
+    }
 }
 
 struct SomeSoftware {

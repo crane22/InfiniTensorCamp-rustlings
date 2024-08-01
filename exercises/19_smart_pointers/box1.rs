@@ -10,20 +10,23 @@
 // the next item. The last item is a value called `Nil`.
 
 // TODO: Use a `Box` in the enum definition to make the code compile.
+
+// https://doc.rust-lang.org/book/ch15-01-box.html#enabling-recursive-types-with-boxes
+
 #[derive(PartialEq, Debug)]
 enum List {
-    Cons(i32, List),
+    Cons(i32, Box<List>),
     Nil,
 }
 
 // TODO: Create an empty cons list.
 fn create_empty_list() -> List {
-    todo!()
+    List::Nil
 }
 
 // TODO: Create a non-empty cons list.
 fn create_non_empty_list() -> List {
-    todo!()
+    List::Cons(1, Box::new(List::Cons(2, Box::new(List::Nil))))
 }
 
 fn main() {

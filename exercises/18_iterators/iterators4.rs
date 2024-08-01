@@ -10,6 +10,14 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+
+    // if num == 0 {
+    //     return 1u64;
+    // }
+    // num * factorial(num - 1)
+
+    (2..=num).fold(1, |acc, x| acc * x)
+    // (1..=num).product()
 }
 
 fn main() {

@@ -19,7 +19,6 @@ fn fruit_basket() -> HashMap<String, u32> {
     basket.insert(String::from("banana"), 1);
     basket.insert(String::from("mongo"), 4);
 
-
     basket
 }
 
